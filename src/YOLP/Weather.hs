@@ -44,8 +44,9 @@ instance Requestable WeatherQuery where
     toRequest wq@WeatherQuery{..}
         = HC.setQueryString [
             ("appID", Just appID),
-            ("coordinates", Just . BC.pack . (\(n,m) -> show n  ++ "," ++ show m)
-                            $ coords),
+            ("coordinates",
+                Just . BC.pack . (\(n,m) -> show n  ++ "," ++ show m) $ coords
+                ),
             ("output", (BC.pack . show) <$> output),
             ("date" , date),
             ("past", (BC.pack . show) <$> past),
