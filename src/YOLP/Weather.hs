@@ -19,14 +19,14 @@ import Secrets (myAppID)
 
 Just apiTarget = HC.parseUrl "http://weather.olp.yahooapis.jp/v1/place"
 
-data WeatherQuery = WeatherQuery
-                  { appID    :: ByteString
-                  , coords   :: (Int,Int)
-                  , output   :: Maybe Output
-                  , date     :: Maybe ByteString
-                  , past     :: Maybe Past
-                  , interval :: Maybe Int
-                  }
+data WeatherQuery
+    = WeatherQuery { appID    :: ByteString
+                   , coords   :: (Int,Int)
+                   , output   :: Maybe Output
+                   , date     :: Maybe ByteString
+                   , past     :: Maybe Past
+                   , interval :: Maybe Int
+                   }
 
 withCoords :: WeatherQuery -> (Int,Int) -> WeatherQuery
 withCoords q c = q{coords = c}
