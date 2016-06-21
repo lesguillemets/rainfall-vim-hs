@@ -1,0 +1,8 @@
+dist
+dist-*
+*.o
+*.out
+*.hi
+.cabal-sandbox/
+cabal.sandbox.config
+.stack-work/
