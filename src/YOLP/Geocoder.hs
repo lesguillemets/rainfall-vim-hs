@@ -2,7 +2,10 @@
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE DisambiguateRecordFields #-}
 
-module Geocoder where
+module YOLP.Geocoder (
+    baseQuery,
+    withQuery
+    ) where
 
 import qualified Network.HTTP.Conduit as HC
 import Data.ByteString (ByteString)
@@ -76,7 +79,7 @@ baseQuery :: GeocoderQuery
 baseQuery = GeocoderQuery {
     appID = myAppID,
     query = Just "",
-    ei = Nothing,
+    ei = Just EnUTF8,
     lat = Nothing,
     lon = Nothing,
     bbox = Nothing,
