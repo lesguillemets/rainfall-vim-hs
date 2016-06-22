@@ -67,11 +67,6 @@ baseQuery = WeatherQuery {
     past     = Nothing,
     interval = Nothing }
 
-data Output = XmlOut | JsonOut
-instance Show Output where
-    show XmlOut = "xml"
-    show JsonOut = "json"
-
 data Past = NoPast | OneHour | TwoHours
 instance Show Past where
     show NoPast = "0"
