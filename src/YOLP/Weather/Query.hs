@@ -21,7 +21,7 @@ Just apiTarget = HC.parseUrl "http://weather.olp.yahooapis.jp/v1/place"
 
 data WeatherQuery
     = WeatherQuery { appID    :: ByteString
-                   , coords   :: (Int,Int)
+                   , coords   :: (Double,Double)
                    , output   :: Maybe Output
                    , date     :: Maybe ByteString
                    , past     :: Maybe Past
