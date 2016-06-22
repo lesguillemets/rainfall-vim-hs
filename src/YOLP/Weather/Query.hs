@@ -28,7 +28,7 @@ data WeatherQuery
                    , interval :: Maybe Int
                    }
 
-withCoords :: WeatherQuery -> (Int,Int) -> WeatherQuery
+withCoords :: WeatherQuery -> (Double,Double) -> WeatherQuery
 withCoords q c = q{coords = c}
 withOutput :: WeatherQuery -> Output -> WeatherQuery
 withOutput q o = q{output = Just o}
