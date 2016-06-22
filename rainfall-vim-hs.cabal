@@ -20,8 +20,10 @@ library
                      , YOLP.Base
                      , YOLP.Weather
                      , YOLP.Weather.Result
+                     , YOLP.Geocoder
   build-depends:       base >= 4.7 && < 5
                      , bytestring
+                     , text
                      , http-conduit
                      , aeson
   default-language:    Haskell2010
