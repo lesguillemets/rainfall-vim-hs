@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 import YOLP.Base
-import YOLP.Weather
+import YOLP.Weather.Query
 import YOLP.Weather.Result
 import Data.Aeson
 import Network.HTTP.Simple (httpLBS)

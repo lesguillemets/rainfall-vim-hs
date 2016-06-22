@@ -20,7 +20,9 @@ library
                      , YOLP.Base
                      , YOLP.Weather
                      , YOLP.Weather.Result
+                     , YOLP.Weather.Query
                      , YOLP.Geocoder
+                     , YOLP.Geocoder.Query
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , text
