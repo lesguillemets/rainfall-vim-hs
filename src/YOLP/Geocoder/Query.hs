@@ -94,7 +94,7 @@ baseQuery = GeocoderQuery {
     start = Nothing,
     page = Nothing,
     results = Nothing,
-    output = Nothing
+    output = Just JsonOut
 }
 
 

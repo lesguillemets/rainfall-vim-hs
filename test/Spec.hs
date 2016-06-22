@@ -2,7 +2,11 @@
 import YOLP.Base
 import YOLP.Weather.Query
 import YOLP.Weather.Result
+import qualified YOLP.Geocoder.Query as G
+import YOLP.Geocoder.Result
 import Data.Aeson
+import Data.Text (Text)
+import qualified Data.Text.IO as TI
 import Network.HTTP.Simple (httpLBS)
 import Network.HTTP.Conduit (responseBody)
 import System.Exit
@@ -49,3 +53,5 @@ main = do
     (assertJust "geo" :: Maybe Geometry -> IO ()) . decode $ geoText
     (httpLBS . toRequest $ baseQuery `withCoords` (135,35))
         >>= mapM_ print . getWeathers . fromJust . decode . responseBody
+    (httpLBS . toRequest $ G.baseQuery `G.withQuery` "明石市")
+        >>= print . fromJust . getFirstCandidate . responseBody
