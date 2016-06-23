@@ -17,6 +17,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Secrets
                      , Helper
+                     , YOLP
                      , YOLP.Base
                      , YOLP.Weather
                      , YOLP.Weather.Result

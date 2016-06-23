@@ -8,6 +8,7 @@ module YOLP.Weather.Query (
     withDate,
     withPast,
     withInterval,
+    Past (..)
     ) where
 
 import qualified Network.HTTP.Conduit as HC

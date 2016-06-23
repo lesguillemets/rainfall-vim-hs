@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+import YOLP
 import YOLP.Base
 import YOLP.Weather.Query
 import YOLP.Weather.Result
@@ -55,3 +56,9 @@ main = do
         >>= mapM_ print . getWeathers . fromJust . decode . responseBody
     (httpLBS . toRequest $ G.baseQuery `G.withQuery` "明石市")
         >>= print . fromJust . getFirstCandidate . responseBody
+    YOLP.getRainAtWithPast "京都市" >>=
+        (\x -> case x of (Left _) -> print x
+                         (Right (l,ws)) -> do
+                             TI.putStrLn l
+                             mapM_ print ws)
+
