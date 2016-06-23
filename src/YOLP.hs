@@ -1,5 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
-module YOLP (getRainAt, getRainAtWithPast) where
+module YOLP (
+    getRainAt,
+    getRainAtWithPast,
+    Weather(..),
+    YOLPError) where
 
 import Data.Text (Text)
 
