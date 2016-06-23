@@ -2,7 +2,7 @@
 import YOLP
 import YOLP.Base
 import YOLP.Weather.Query
-import YOLP.Weather.Result
+import YOLP.Weather.Result.Internal
 import qualified YOLP.Geocoder.Query as G
 import YOLP.Geocoder.Result
 import Data.Aeson

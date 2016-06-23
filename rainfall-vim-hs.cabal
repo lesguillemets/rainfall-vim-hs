@@ -21,6 +21,7 @@ library
                      , YOLP.Base
                      , YOLP.Weather
                      , YOLP.Weather.Result
+                     , YOLP.Weather.Result.Internal
                      , YOLP.Weather.Query
                      , YOLP.Geocoder
                      , YOLP.Geocoder.Result
