@@ -1,4 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
+-- YOLP: interface to
+--  [Web Services by Yahoo! JAPAN](http://developer.yahoo.co.jp/about)
 module YOLP (
     getRainAt,
     getRainAtWithPast,
