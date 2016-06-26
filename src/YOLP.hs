@@ -58,7 +58,7 @@ report (Right (loc, ws))
         expectedMax = maximum . map _rainfall $ forecast
         f [] = "[]"
         f (h:_) = pack . drop 8 . _date $ h
-        time = f . dropWhile ( (/= 0) . _rainfall) $ forecast
+        time = f . dropWhile ( (== 0) . _rainfall) $ forecast
 
 reportRainAt :: Text -> IO Text
 reportRainAt l = report <$> getRainAtWithPast l
