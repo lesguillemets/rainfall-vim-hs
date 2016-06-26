@@ -28,6 +28,7 @@ $(deriveJSON defaultOptions{
 data WType = Observation | Forecast deriving (Show, Read, Eq)
 $(deriveJSON defaultOptions {constructorTagModifier = headLow} ''WType)
 
+
 data Weather = Weather { _type :: WType
                        , _date :: String
                        , _rainfall :: Double
@@ -36,6 +37,13 @@ $(deriveJSON defaultOptions{
     fieldLabelModifier = headCap . drop 1
     } ''Weather)
 
+isObserved :: Weather  -> Bool
+isObserved = f . _type
+    where
+        f Observation = True
+        f Forecast = False
+isForecast :: Weather  -> Bool
+isForecast = not . isObserved
 -- TODO : how to use newtype?
 data WeatherList = WeatherList {_getWeathers :: [Weather]} deriving (Show, Eq)
 $(deriveJSON defaultOptions{

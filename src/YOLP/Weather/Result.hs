@@ -1,6 +1,8 @@
 module YOLP.Weather.Result (
     getWeathers,
-    Weather (..)
+    Weather (..),
+    isForecast,
+    isObserved
 ) where
 
 import YOLP.Weather.Result.Internal
