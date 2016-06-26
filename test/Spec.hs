@@ -20,3 +20,4 @@ main = do
                          (Right (l,ws)) -> do
                              TI.putStrLn l
                              mapM_ print ws)
+    TI.putStrLn =<< YOLP.reportRainAt "京都市"

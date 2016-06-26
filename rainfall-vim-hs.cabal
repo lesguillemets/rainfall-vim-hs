@@ -26,6 +26,7 @@ library
                      , YOLP.Geocoder
                      , YOLP.Geocoder.Result
                      , YOLP.Geocoder.Query
+                     , Vim
   build-depends:       base >= 4.7 && < 5
                      , bytestring
                      , text
@@ -33,6 +34,8 @@ library
                      , aeson
                      , lens
                      , lens-aeson
+                     , conduit
+                     , conduit-extra
   default-language:    Haskell2010
 
 executable rainfall-vim-hs-exe
@@ -68,6 +71,18 @@ test-suite t-weather-parse
                      , aeson
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
+
+test-suite t-vim
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             TVim.hs
+  build-depends:       base
+                     , rainfall-vim-hs
+                     , hspec
+                     , text
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
 source-repository head
   type:     git
   location: https://github.com/lesguillemets/rainfall-vim-hs
